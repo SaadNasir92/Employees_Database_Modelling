@@ -1,7 +1,7 @@
 ﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: https://app.quickdatabasediagrams.com/#/d/TDj10m
 -- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
+-- Actual table scripts under table_setup.sql - this is just the default that was given via QUICKDBD, my edits and additional constraints were done under table_setup.sql. 
 
 CREATE TABLE "departments" (
     "dept_id" INTEGER   NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE "manager_departments" (
     "dept_no" INTEGER   NOT NULL,
     "emp_no" INTEGER   NOT NULL,
     CONSTRAINT "pk_manager_departments" PRIMARY KEY (
-        "dept_no","emp_no"
+        "emp_no"
      )
 );
 
@@ -42,7 +42,7 @@ CREATE TABLE "employees" (
 );
 
 CREATE TABLE "salaries" (
-    -- Positive number, check constraint after import.
+    -- Positive number, add constraint during table creation. 
     "salary" INTEGER   NOT NULL,
     "emp_id" INTEGER   NOT NULL,
     CONSTRAINT "pk_salaries" PRIMARY KEY (
